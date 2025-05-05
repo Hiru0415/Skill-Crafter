@@ -50,7 +50,7 @@ function MyAchievements() {
             {filteredData.length === 0 ? (
               <div className='not_found_box'>
                 <div className='not_found_img'></div>
-                <p className='not_found_msg'>No posts found. Please create a new post.</p>
+                <p className='not_found_msg'>No posts found. Create a new post.</p>
                 <button
                   className='not_found_btn'
                   onClick={() => (window.location.href = '/addAchievements')}
