@@ -84,6 +84,7 @@ function NavBar() {
                         >
                             Activities Management
                         </p>
+                    
                         <p
                             className={`nav_nav_item ${currentPath === '/allAchievements' ? 'nav_nav_item_active' : ''}`}
                             onClick={() => (window.location.href = '/allAchievements')}
