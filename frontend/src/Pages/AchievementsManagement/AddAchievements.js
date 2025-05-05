@@ -132,7 +132,6 @@ function AddAchievements() {
                 <option value="" disabled>Select Category</option>
                 <option value="Woodworking">Woodworking</option>
                 <option value="Painting">Painting</option>
-                <option value="Painting">Drawing</option>
                 <option value="Jewelry making">Jewelry making</option>
                 <option value="Crochet">Crochet</option>
                 <option value="Other creative">Other creative</option>
