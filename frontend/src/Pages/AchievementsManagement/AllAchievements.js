@@ -112,12 +112,7 @@ function AllAchievements() {
           )}
         </div>
 
-        <button
-          className="add-achievement-btn"
-          onClick={() => (window.location.href = '/addAchievements')}
-        >
-          <IoIosCreate />
-        </button>
+        
       </div>
     </div>
   );
