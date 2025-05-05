@@ -101,7 +101,7 @@ function UpdateAchievements() {
         <NavBar/>
         <div className='continSection'>
           <div className="from_continer">
-            <p className="Auth_heading">Update Achievement</p>
+            <p className="Auth_heading">Update Achievements</p>
             <form onSubmit={handleSubmit} className='from_data'>
               {/* Image Upload Section */}
               <div className="Auth_formGroup">
