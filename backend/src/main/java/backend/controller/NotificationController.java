@@ -17,8 +17,12 @@ public class NotificationController {
     @Autowired
     private NotificationRepository notificationRepository;
 
+    @GetMapping("/{userId}")
+    public List<NotificationModel> getNotifications(@PathVariable String userId) {
+        return notificationRepository.findByUserId(userId);
+    }
     
-
+    
     @PutMapping("/{id}/markAsRead")
     public ResponseEntity<?> markAsRead(@PathVariable String id) {
         return notificationRepository.findById(id).map(notification -> {
