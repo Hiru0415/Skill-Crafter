@@ -3,7 +3,7 @@ import { FaUserGraduate } from "react-icons/fa";
 import { MdNotifications } from "react-icons/md";
 import { MdNotificationsActive } from "react-icons/md";
 import { IoLogOut } from "react-icons/io5";
-import axios from 'axios';
+
 import './NavBar.css';
 import Pro from './img/img.png';
 import { fetchUserDetails } from '../../Pages/UserManagement/UserProfile';
