@@ -101,8 +101,100 @@ function UpdateAchievements() {
         <NavBar/>
         <div className='continSection'>
           <div className="from_continer">
-            <p className="Auth_heading">Update Achievement</p>
-            
+            <p className="Auth_heading">Update Achievements</p>
+            <form onSubmit={handleSubmit} className='from_data'>
+              {/* Image Upload Section */}
+              <div className="Auth_formGroup">
+                <label className="Auth_label">Current Image</label>
+                {previewImage && (
+                  <div style={{ marginBottom: '15px' }}>
+                    <img
+                      src={previewImage}
+                      alt="Current Achievement"
+                      style={{ 
+                        width: '100%', 
+                        borderRadius: '4px',
+                      }}
+                    />
+                  </div>
+                )}
+                <input
+                  type="file"
+                  onChange={handleFileChange}
+                  accept="image/*"
+                  className="Auth_input"
+                  style={{ padding: '8px' }}
+                />
+              </div>
+
+              {/* Title Input */}
+              <div className="Auth_formGroup">
+                <label className="Auth_label">Title</label>
+                <input
+                  className="Auth_input"
+                  name="title"
+                  placeholder="Enter achievement title"
+                  value={formData.title}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+
+              {/* Description Textarea */}
+              <div className="Auth_formGroup">
+                <label className="Auth_label">Description</label>
+                <textarea
+                  className="Auth_input"
+                  name="description"
+                  placeholder="Describe your achievement"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                  rows="5"
+                  required
+                />
+              </div>
+
+              {/* Category Select */}
+              <div className="Auth_formGroup">
+                <label className="Auth_label">Category</label>
+                <select
+                  className="Auth_input"
+                  name="category"
+                  value={formData.category}
+                  onChange={handleInputChange}
+                  required
+                >
+                  <option value="" disabled>Select Category</option>
+                  <option value="Woodworking">Woodworking</option>
+                  <option value="Painting">Painting</option>
+                  <option value="Jewelry making">Jewelry making</option>
+                  <option value="Crochet">Crochet</option>
+                  <option value="Other creative">Other creative</option>
+                </select>
+              </div>
+
+              {/* Date Input */}
+              <div className="Auth_formGroup">
+                <label className="Auth_label">Date</label>
+                <input
+                  className="Auth_input"
+                  name="date"
+                  type="date"
+                  value={formData.date}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button 
+                type="submit" 
+                className="Auth_button"
+                disabled={isLoading}
+              >
+                {isLoading ? 'Updating...' : 'Update Achievement'}
+              </button>
+            </form>
           </div>
         </div>
       </div>
