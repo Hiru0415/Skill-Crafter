@@ -54,7 +54,7 @@ function NotificationsPage() {
             {notifications.length === 0 ? (
               <div className='not_found_box'>
                 <div className='not_found_img'></div>
-                <p className='not_found_msg'>No notifications found</p>
+                <p className='not_found_msg'>No notifications found.</p>
               </div>
             ) : (
               notifications.map((notification) => (
