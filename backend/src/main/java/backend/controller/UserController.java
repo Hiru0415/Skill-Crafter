@@ -184,33 +184,7 @@ public class UserController {
         }
     }
 
-    //delete
-    @DeleteMapping("/user/{id}")
-    public ResponseEntity<?> deleteProfile(@PathVariable String id) {
-        if (!userRepository.existsById(id)) {
-            throw new UserNotFoundException(id);
-        }
-
-        // Delete user-related data
-        userRepository.findById(id).ifPresent(user -> {
-            // Delete user's posts
-            achievementsRepository.deleteByPostOwnerID(id);
-            learningPlanRepository.deleteByPostOwnerID(id);
-            postManagementRepository.deleteByUserID(id); // Delete user's posts
-            notificationRepository.deleteByUserId(id);
-
-            // Remove user from followers and following lists
-            userRepository.findAll().forEach(otherUser -> {
-                otherUser.getFollowedUsers().remove(id);
-                userRepository.save(otherUser);
-            });
-        });
-
-        // Delete the user account
-        userRepository.deleteById(id);
-
-        return ResponseEntity.ok(Map.of("message", "User account and related data deleted successfully."));
-    }
+    
 
     // check email
     @GetMapping("/checkEmail")
