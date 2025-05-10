@@ -77,7 +77,17 @@ function UserProfile() {
                                     <FaTools className='user_data_card_icon' /> {userData.skills.join(', ')}
                                 </p>
                             </div>
-                            
+                            <div className="profile-actions">
+                                <button 
+                                    onClick={() => navigate(`/updateUserProfile/${userData.id}`)} 
+                                    className="update-button"
+                                >
+                                    Update Profile
+                                </button>
+                                <button onClick={handleDelete} className="delete-button">
+                                    Delete Account
+                                </button>
+                            </div>
                         </div>
                     </div>
                 )}
