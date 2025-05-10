@@ -141,7 +141,10 @@ function UserRegister() {
             </div>
             
             <div className="register-card">
-              
+                <div className="register-header">
+                    <h1>Create Your Account</h1>
+                    <p>Join our community of learners</p>
+                </div>
 
                 <form onSubmit={handleSubmit} className="register-form-new">
                     <div className="profile-upload" onClick={triggerFileInput}>
