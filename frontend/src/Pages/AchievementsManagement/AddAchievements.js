@@ -121,7 +121,7 @@ function AddAchievements() {
             </div>
 
             <div className="form-group">
-              <label>Category</label>
+              
               <select
                 name="category"
                 className="form-input category-select"
