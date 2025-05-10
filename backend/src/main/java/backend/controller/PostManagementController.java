@@ -289,6 +289,7 @@ public class PostManagementController {
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
+<<<<<<< Updated upstream
     @DeleteMapping("/{postId}/comment/{commentId}")
     public ResponseEntity<PostManagementModel> deleteComment(
             @PathVariable String postId,
@@ -310,3 +311,5 @@ public class PostManagementController {
         return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE).body("File size exceeds the maximum limit!");
     }
 }
+=======
+>>>>>>> Stashed changes
