@@ -216,7 +216,13 @@ function AllPost() {
       });
 
       // Update state to remove the deleted comment
-      
+      setPosts((prevPosts) =>
+        prevPosts.map((post) =>
+          post.id === postId
+            ? { ...post, comments: post.comments.filter((comment) => comment.id !== commentId) }
+            : post
+        )
+      );
 
       setFilteredPosts((prevFilteredPosts) =>
         prevFilteredPosts.map((post) =>
