@@ -136,7 +136,18 @@ function AddNewPost() {
               </select>
             </div>
 
-            
+            <div className="form-group">
+              <label>Media Files</label>
+              <div className="file-input-container">
+                <label className="file-input-label">Add photos or videos</label>
+                <input
+                  type="file"
+                  className="custom-file-input"
+                  accept="image/jpeg,image/png,image/jpg,video/mp4"
+                  multiple
+                  onChange={handleMediaChange}
+                />
+              </div>
               
               <div className="media-preview">
                 {mediaPreviews.map((preview, index) => (
