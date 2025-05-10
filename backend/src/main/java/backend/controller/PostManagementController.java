@@ -264,7 +264,7 @@ public class PostManagementController {
             @PathVariable String postId,
             @PathVariable String commentId,
             @RequestBody Map<String, String> request) {
-        String userID = request.get("userID");
+      
         String content = request.get("content");
 
         return postRepository.findById(postId)
