@@ -107,7 +107,16 @@ function MyAllPost() {
     navigate(`/updatePost/${postId}`); // Navigate to the UpdatePost page with the post ID
   };
 
-  
+  const handleMyPostsToggle = () => {
+    if (showMyPosts) {
+      // Show all posts
+      setFilteredPosts(posts);
+    } else {
+      // Filter posts by logged-in user ID
+      setFilteredPosts(posts.filter((post) => post.userID === loggedInUserID));
+    }
+    setShowMyPosts(!showMyPosts); // Toggle the state
+  };
 
   const handleLike = async (postId) => {
     const userID = localStorage.getItem('userID');
