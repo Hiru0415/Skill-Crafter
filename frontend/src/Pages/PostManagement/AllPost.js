@@ -322,7 +322,15 @@ function AllPost() {
           Answer Questions
         </button>
         <Quiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
-        
+        <div className="search-section">
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search posts..."
+            value={searchQuery}
+            onChange={handleSearch}
+          />
+        </div>
 
         <div className="post-grid">
           {filteredPosts.length === 0 ? (
