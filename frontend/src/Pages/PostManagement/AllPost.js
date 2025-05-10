@@ -373,7 +373,7 @@ function AllPost() {
                   )}
                 </div>
 
-                <h3 className="post-title">{post.title}</h3>
+                
                 <p className="post-description">{post.description}</p>
                 <span className="post-category">{post.category || 'Uncategorized'}</span>
 
