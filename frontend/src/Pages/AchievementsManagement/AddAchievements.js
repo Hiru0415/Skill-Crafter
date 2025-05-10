@@ -94,18 +94,7 @@ function AddAchievements() {
               </div>
             </div>
 
-            <div className="form-group">
-              <label>Title</label>
-              <input
-                type="text"
-                name="title"
-                className="form-input"
-                placeholder="Enter achievement title"
-                value={formData.title}
-                onChange={handleChange}
-                required
-              />
-            </div>
+            
 
             <div className="form-group">
               <label>Description</label>
