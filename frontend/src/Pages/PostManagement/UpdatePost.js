@@ -33,11 +33,7 @@ function UpdatePost() {
     fetchPost();
   }, [id]);
 
-  const handleDeleteMedia = async (mediaUrl) => {
-    const confirmDelete = window.confirm('Are you sure you want to delete this media file?');
-    if (!confirmDelete) {
-      return;
-    }
+  
 
     try {
       await axios.delete(`http://localhost:8080/posts/${id}/media`, {
