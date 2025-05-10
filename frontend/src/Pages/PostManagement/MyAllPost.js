@@ -103,9 +103,7 @@ function MyAllPost() {
     }
   };
 
-  const handleUpdate = (postId) => {
-    navigate(`/updatePost/${postId}`); // Navigate to the UpdatePost page with the post ID
-  };
+  
 
   const handleMyPostsToggle = () => {
     if (showMyPosts) {
