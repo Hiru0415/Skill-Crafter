@@ -4,14 +4,7 @@ import GoogalLogo from './img/glogo.png';
 import { IoMdAdd } from "react-icons/io";
 
 function UserRegister() {
-    const [formData, setFormData] = useState({
-        fullname: '',
-        email: '',
-        password: '',
-        phone: '',
-        skills: [],
-        bio: '',
-    });
+    
     const [profilePicture, setProfilePicture] = useState(null);
     const [previewImage, setPreviewImage] = useState(null);
     const [verificationCode, setVerificationCode] = useState('');
