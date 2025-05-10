@@ -119,7 +119,23 @@ function AddNewPost() {
               />
             </div>
 
-           
+            <div className="form-group">
+              <label>Category</label>
+              <select
+                className="form-input category-select"
+                value={categories}
+                onChange={(e) => setCategories(e.target.value)}
+                required
+              >
+                <option value="" disabled>Select Category</option>
+                <option value="Woodworking">Woodworking</option>
+                <option value="Painting">Painting</option>
+                <option value="Jewelry making">Jewelry making</option>
+                <option value="Crochet">Crochet</option>
+                <option value="Other creative">Other creative</option>
+              </select>
+            </div>
+
             <div className="form-group">
               <label>Media Files</label>
               <div className="file-input-container">
