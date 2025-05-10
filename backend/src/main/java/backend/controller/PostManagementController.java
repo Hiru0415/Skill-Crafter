@@ -1,21 +1,5 @@
 package backend.controller;
 
-import backend.exception.PostManagementNotFoundException;
-import backend.model.Comment;
-import backend.model.NotificationModel;
-import backend.model.PostManagementModel;
-import backend.repository.NotificationRepository;
-import backend.repository.PostManagementRepository;
-import backend.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MaxUploadSizeExceededException;
-import org.springframework.web.multipart.MultipartFile;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -27,6 +11,32 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
+import org.springframework.web.multipart.MultipartFile;
+
+import backend.exception.PostManagementNotFoundException;
+import backend.model.Comment;
+import backend.model.NotificationModel;
+import backend.model.PostManagementModel;
+import backend.repository.NotificationRepository;
+import backend.repository.PostManagementRepository;
+import backend.repository.UserRepository;
 
 @RestController
 @RequestMapping("/posts")
@@ -264,7 +274,7 @@ public class PostManagementController {
             @PathVariable String postId,
             @PathVariable String commentId,
             @RequestBody Map<String, String> request) {
-      
+        String userID = request.get("userID");
         String content = request.get("content");
 
         return postRepository.findById(postId)
