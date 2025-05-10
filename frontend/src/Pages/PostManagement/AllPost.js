@@ -337,12 +337,7 @@ function AllPost() {
             <div className="no-posts">
               <h3>No Posts Found</h3>
               <p>Share your thoughts with the community</p>
-              <button 
-                className="create-button"
-                onClick={() => (window.location.href = '/addNewPost')}
-              >
-                Create Post
-              </button>
+              
             </div>
           ) : (
             filteredPosts.map((post) => (
