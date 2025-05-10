@@ -149,7 +149,20 @@ function AddNewPost() {
                 />
               </div>
               
-             
+              <div className="media-preview">
+                {mediaPreviews.map((preview, index) => (
+                  <div key={index} className="media-item">
+                    {preview.type.startsWith('video/') ? (
+                      <video controls>
+                        <source src={preview.url} type={preview.type} />
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
+                      <img src={preview.url} alt={`Preview ${index}`} />
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
 
             <button type="submit" className="submit-button">
