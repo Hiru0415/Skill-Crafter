@@ -55,7 +55,11 @@ function UserProfile() {
                 {userData && userData.id === localStorage.getItem('userID') && (
                     <div className="profile-card">
                         {userData.profilePicturePath && (
-                            
+                            <img
+                                src={`http://localhost:8080/uploads/profile/${userData.profilePicturePath}`}
+                                alt="Profile"
+                                className="profile-image"
+                            />
                         )}
                         <div className='pro_left_card'>
                             <div className='user_data_card'>
