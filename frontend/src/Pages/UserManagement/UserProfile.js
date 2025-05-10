@@ -92,20 +92,7 @@ function UserProfile() {
                     </div>
                 )}
                 
-                <div className='my_post_link'>
-                    <div className='my_post_link_card' onClick={() => (window.location.href = '/myLearningPlan')}>
-                        <div className='my_post_name_img1'></div>
-                        <p className='my_post_link_card_name'>My Learning Plan</p>
-                    </div>
-                    <div className='my_post_link_card' onClick={() => (window.location.href = '/myAllPost')}>
-                        <div className='my_post_name_img2'></div>
-                        <p className='my_post_link_card_name'>My SkillPost</p>
-                    </div>
-                    <div className='my_post_link_card' onClick={() => (window.location.href = '/myAchievements')}>
-                        <div className='my_post_name_img3'></div>
-                        <p className='my_post_link_card_name'>My Achievements</p>
-                    </div>
-                </div>
+                
                 <br/><br/>
             </div>
         </div>
