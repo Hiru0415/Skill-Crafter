@@ -315,7 +315,12 @@ function AllPost() {
     <div className="post-page">
       <NavBar />
       <div className="post-content">
-        
+        <button 
+          className="quiz-button"
+          onClick={() => setIsQuizOpen(true)}
+        >
+          Answer Questions
+        </button>
         <Quiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
         <div className="search-section">
           <input
