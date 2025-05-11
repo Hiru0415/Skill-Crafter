@@ -253,8 +253,7 @@ public class PostManagementController {
                             .orElse("Anonymous");
                     comment.setUserFullName(userFullName);
 
-                    post.getComments().add(comment);
-                    postRepository.save(post);
+                   
 
                     // Create a notification for the post owner
                     if (!userID.equals(post.getUserID())) {
