@@ -242,10 +242,7 @@ public class PostManagementController {
 
         return postRepository.findById(postId)
                 .map(post -> {
-                    Comment comment = new Comment();
-                    comment.setId(UUID.randomUUID().toString());
-                    comment.setUserID(userID);
-                    comment.setContent(content);
+                   
 
                     // Fetch user's full name
                     String userFullName = userRepository.findById(userID)
