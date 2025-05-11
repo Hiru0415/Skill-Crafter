@@ -170,22 +170,7 @@ public class PostManagementController {
                 }
             }
 
-            List<String> newMediaUrls = newMediaFiles.stream()
-                    .map(file -> {
-                        try {
-                            String extension = StringUtils.getFilenameExtension(file.getOriginalFilename());
-                            String uniqueFileName = System.currentTimeMillis() + "_" + UUID.randomUUID() + "." + extension;
-                            Path filePath = uploadDirectory.toPath().resolve(uniqueFileName);
-                            file.transferTo(filePath.toFile());
-                            return "/media/" + uniqueFileName;
-                        } catch (IOException e) {
-                            throw new RuntimeException("Failed to store file " + file.getOriginalFilename(), e);
-                        }
-                    })
-                    .collect(Collectors.toList());
-            post.getMedia().addAll(newMediaUrls);
-        }
-
+           
         postRepository.save(post);
         return ResponseEntity.ok("Post updated successfully!");
     }
